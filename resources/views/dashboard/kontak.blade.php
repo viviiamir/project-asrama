@@ -56,7 +56,7 @@ img {
                 <div class="list-group-item d-flex justify-content-between align-items-center">
                     <div>
                         👮 <strong>Keamanan</strong><br>
-                        <small class="text-muted">Nomor: 110</small>
+                        <small class="text-muted">Nomor: </small>
                     </div>
                     <div>
                         <a href="tel:110" class="btn btn-danger btn-sm rounded-pill px-3">📞 Panggil</a>
