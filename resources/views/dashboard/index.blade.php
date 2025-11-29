@@ -104,7 +104,7 @@ body {
 
     {{-- 📨 DISTRIBUSI NOTIFIKASI --}}
     <div>
-        <h4 class="section-title">📨 Distribusi Notifikasi</h4>
+        <h4 class="section-title">📨 Riwayat Notifikasi</h4>
         <table class="table table-striped text-center align-middle">
             <thead class="table-dark">
                 <tr>
