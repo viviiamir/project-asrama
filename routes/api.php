@@ -53,3 +53,4 @@ Route::get('/kamera/latest', [KameraController::class, 'latestImage'])->name('ap
 
 Route::get('/control', [ControlController::class, 'get']);
 Route::post('/control', [ControlController::class, 'set']);
+Route::post('/kamera/upload', [KameraController::class, 'uploadImage'])->name('api.kamera.upload');

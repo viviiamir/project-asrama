@@ -33,3 +33,5 @@ Route::delete('/kontak/{id}', [KontakController::class, 'destroy'])->name('konta
 Route::get('/dashboard/sse', [DashboardController::class, 'sse'])->name('dashboard.sse');
 
 Route::post('/dashboard/sse/test', [DashboardController::class, 'testSSE'])->name('dashboard.sse.test');
+
+Route::post('/kamera/upload', [KameraController::class, 'uploadImage']);

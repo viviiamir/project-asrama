@@ -1,11 +1,46 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+
 
 use App\Models\Riwayat;
 
 class KameraController extends Controller
+{   
+    public function uploadImage(Request $request)
 {
+    $request->validate([
+        'device_id' => 'required',
+        'image_base64' => 'required'
+    ]);
+
+    // Proses Base64 → JPG
+    $image = $request->image_base64;
+    $image = str_replace('data:image/jpeg;base64,', '', $image);
+    $image = str_replace(' ', '+', $image);
+
+    $imageName = 'esp32cam_' . time() . '.jpg';
+    $filePath = public_path('uploads/' . $imageName);
+    
+    file_put_contents($filePath, base64_decode($image));
+
+    // Simpan ke DB
+    Riwayat::create([
+        'device_id' => $request->device_id,
+        'floor' => $request->floor ?? 0,
+        'event_type' => $request->event_type ?? 'IMAGE',
+        'value' => 'snapshot',
+        'timestamp' => now(),
+        'image_url' => asset('uploads/' . $imageName)
+    ]);
+
+    return response()->json([
+        'status' => 'success',
+        'url' => asset('uploads/' . $imageName)
+    ]);
+}
+
     // 🌇 Halaman utama kamera
     public function index()
     {
