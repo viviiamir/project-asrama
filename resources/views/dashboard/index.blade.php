@@ -102,9 +102,9 @@ body {
         </div>
     </div>
 
-    {{-- 📨 DISTRIBUSI TELEGRAM --}}
+    {{-- 📨 DISTRIBUSI NOTIFIKASI --}}
     <div>
-        <h4 class="section-title">📨 Distribusi Telegram</h4>
+        <h4 class="section-title">📨 Distribusi Notifikasi</h4>
         <table class="table table-striped text-center align-middle">
             <thead class="table-dark">
                 <tr>
@@ -144,7 +144,7 @@ function toggleSSE() {
             if (eventCooldown) return;
             const data = JSON.parse(event.data);
             updateNotification(data);
-            if (data.event_type === "SMOKE" || data.event_type === "SOS") {
+            if (data.event_type === "SMOKE" || data.event_type === "FIRE") {
                 playAlarmSound();
                 showPopupAlert(data.event_type);
             }
@@ -153,7 +153,7 @@ function toggleSSE() {
         indicator.className = "active";
         indicator.textContent = "🟢 SSE Aktif";
         btn.textContent = "⛔ Hentikan SSE";
-        alert("✅ SSE diaktifkan. Sekarang sistem siap menerima event SMOKE/SOS.");
+        alert("✅ SSE diaktifkan. Sekarang sistem siap menerima event SMOKE/FIRE.");
     } else {
         evtSource.close();
         evtSource = null;
@@ -233,7 +233,7 @@ function showPopupAlert(type) {
     popup.style.background = type === 'SMOKE' ? 'rgba(220,0,0,0.9)' : 'rgba(255,165,0,0.9)';
     popup.innerHTML = type === 'SMOKE'
         ? '🚨 PERINGATAN: Terdeteksi Asap di Asrama!'
-        : '🆘 TOMBOL SOS DITEKAN oleh Penghuni!';
+        : '🚨 PERINGATAN: Terdeteksi Api di Asrama!';
     setTimeout(() => { popup.style.display = 'none'; }, 8000);
 }
 

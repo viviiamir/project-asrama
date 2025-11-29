@@ -42,7 +42,7 @@ class RiwayatController extends Controller
             'event_type' => strtoupper($request->event_type),
             'value' => $request->value,
             'image_url' => $request->image_url,
-            'notif_channel' => 'WEB, Telegram',
+            'notif_channel' => 'WEB',
             'sirine_status' => $sirineStatus,
             'ack_status' => 'PENDING',
             'resolve_status' => 'OPEN',

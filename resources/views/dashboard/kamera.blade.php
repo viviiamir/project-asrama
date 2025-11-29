@@ -68,7 +68,7 @@ img {
                         <td>
                             <span class="badge 
                                 @if($item->event_type == 'SMOKE') bg-danger 
-                                @elseif($item->event_type == 'SOS') bg-warning text-dark 
+                                @elseif($item->event_type == 'FIRE') bg-warning text-dark 
                                 @else bg-info text-dark 
                                 @endif">
                                 {{ $item->event_type }}

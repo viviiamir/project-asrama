@@ -67,10 +67,10 @@ class DashboardController extends Controller
     DB::table('riwayat')->insert([
         'device_id'     => 'F1-TestNode',
         'floor'         => 1,
-        'event_type'    => 'SOS',
-        'value'         => 'Button Pressed (Test)',
+        'event_type'    => 'FIRE',
+        'value'         => 'Pressed (Test)',
         'image_url'     => 'https://i.ibb.co/Nn9LxqV/fire.jpg',
-        'notif_channel' => 'WEB, Telegram',
+        'notif_channel' => 'WEB',
         'sirine_status' => 'ON',
         'timestamp'     => now()
     ]);

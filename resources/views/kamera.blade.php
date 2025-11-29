@@ -46,7 +46,7 @@
                             <td>
                                 <span class="badge 
                                     @if($item->event_type == 'SMOKE') bg-danger 
-                                    @elseif($item->event_type == 'SOS') bg-warning text-dark 
+                                    @elseif($item->event_type == 'FIRE') bg-warning text-dark 
                                     @else bg-info text-dark 
                                     @endif">
                                     {{ $item->event_type }}
@@ -74,7 +74,7 @@
                 <ul>
                     <li><b>Device ID:</b> Identitas node (misalnya Lantai 2 – Zona Tengah).</li>
                     <li><b>Floor:</b> Nomor lantai lokasi node.</li>
-                    <li><b>Event Type:</b> Jenis kejadian (<code>SMOKE</code>, <code>SOS</code>, <code>IMAGE</code>).</li>
+                    <li><b>Event Type:</b> Jenis kejadian (<code>SMOKE</code>, <code>FIRE</code>, <code>IMAGE</code>).</li>
                     <li><b>Value:</b> Nilai sensor (MQ-2, tombol SOS, suhu/kelembaban DHT11/DHT22).</li>
                     <li><b>Image_URL:</b> Link gambar terbaru dari ESP32-CAM.</li>
                     <li><b>Notif_Channel:</b> Jalur notifikasi (WEB, SMS, WA, Telegram).</li>

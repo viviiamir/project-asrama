@@ -9,7 +9,7 @@
     <div class="card shadow-lg border-0 rounded-4">
         <div class="card-body">
             <h2 class="fw-bold mb-3">📤 Status Distribusi Notifikasi</h2>
-            <p class="text-muted">Log pengiriman notifikasi ke Telegram.</p>
+            <p class="text-muted">Log pengiriman notifikasi ke Petugas.</p>
 
             {{-- 🔹 Tabel Distribusi --}}
             <div class="table-responsive mt-4">
@@ -36,8 +36,8 @@
                             <td>
                                 @if($log->event_type == 'SMOKE')
                                     <span class="badge bg-danger">SMOKE</span>
-                                @elseif($log->event_type == 'SOS')
-                                    <span class="badge bg-warning text-dark">SOS</span>
+                                @elseif($log->event_type == 'FIRE')
+                                    <span class="badge bg-warning text-dark">FIRE</span>
                                 @elseif($log->event_type == 'IMAGE')
                                     <span class="badge bg-info text-dark">IMAGE</span>
                                 @else

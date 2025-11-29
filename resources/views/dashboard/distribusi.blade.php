@@ -53,8 +53,8 @@ img {
                             <td>
                                 @if($log->event_type == 'SMOKE')
                                     <span class="badge bg-danger">SMOKE</span>
-                                @elseif($log->event_type == 'SOS')
-                                    <span class="badge bg-warning text-dark">SOS</span>
+                                @elseif($log->event_type == 'FIRE')
+                                    <span class="badge bg-warning text-dark">FIRE</span>
                                 @elseif($log->event_type == 'IMAGE')
                                     <span class="badge bg-info text-dark">IMAGE</span>
                                 @else
